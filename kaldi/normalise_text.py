@@ -30,8 +30,8 @@ def lettersOnly(text, keepid, case, convertnums):
     #all whitespace to one space, and strip leading/trailing whitespace:
     text = re.sub(r"\s+"," ",text) 
     text = text.strip()
-    #all non-unicode letters except spaces removed.
-    text = re.sub(r"[^\w ]", "", text, flags=re.UNICODE)
+    #all non-unicode letters except space, '
+    text = re.sub(r"[^\w ']", "", text, flags=re.UNICODE)
     if case == "upper":
         text = text.upper()
     else:
