@@ -2,6 +2,7 @@
 
 if [ "$#" -ne 1 ]; then
   echo "Usage: $0 <dir-to-install-to>"
+  exit 1
 fi
 
 dir="$1"
