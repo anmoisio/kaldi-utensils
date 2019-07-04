@@ -3,5 +3,5 @@ Normalises text, e.g.
 Shakespeare-37 Two beers...  or not 2 beers? 
 -> Shakespeare-37 two beers or not two beers
 
-## get\_nbest.sh
-Gets the N-best transcriptions from a directory with lattices.
+## generate\_random\_search\_args.py
+Generate configs for random hyperparameter search, using a yaml format
