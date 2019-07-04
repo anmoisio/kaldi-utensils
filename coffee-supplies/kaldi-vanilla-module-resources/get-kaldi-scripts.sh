@@ -7,7 +7,7 @@ fi
 dir="$1"
 
 module load kaldi-vanilla
-git clone github.com/kaldi/kaldi.git "$dir"
+git clone https://github.com/kaldi-asr/kaldi "$dir"
 cd "$dir"
 git checkout "$KALDI_COMMIT" #this is set by the module
 
