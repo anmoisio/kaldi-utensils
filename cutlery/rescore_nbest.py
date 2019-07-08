@@ -31,10 +31,13 @@ def find_lowest_costs(costs_list, weights):
   #costs should be a list of dictionaries, weights should be a list of weights for each dictionary
   lowest_costs = {} #{<uttid>: (<n>, weighted_cost)}
   for uttid in costs_list[0]:
-    for n in costs_list[0][uttid]:
-      weighted_cost = sum(weights[i] * costs[uttid][n] for i, costs in enumerate(costs_list))
-      if uttid not in lowest_costs or lowest_costs[uttid][1] > weighted_cost:
-        lowest_costs[uttid] = (n, weighted_cost)
+    try: 
+      for n in costs_list[0][uttid]:
+        weighted_cost = sum(weights[i] * costs[uttid][n] for i, costs in enumerate(costs_list))
+        if uttid not in lowest_costs or lowest_costs[uttid][1] > weighted_cost:
+          lowest_costs[uttid] = (n, weighted_cost)
+    except KeyError:
+      raise(KeyError("NBest-id "+uttid+"-"+n+" is not found in all cost lists!"))
   return lowest_costs
 
 def choose_hypotheses(hyps, lowest_costs):
