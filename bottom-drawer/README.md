@@ -1,9 +1,9 @@
 ## apply\_wordmap.py
 Applies a Morfessor wordmap to a text, with different types of glueing:
-uttid1 an \<w\> app le
-uttid1 an app+ le
-uttid1 an app +le
-uttid1 an app+ +le
+    uttid1 an \<w\> app le
+    uttid1 an app+ le
+    uttid1 an app +le
+    uttid1 an app+ +le
 
 ## generate\_random\_search\_args.py
 Generate configs for random hyperparameter search, using a yaml format
@@ -14,8 +14,8 @@ For instance, if you are using a subword language model, you may need this hypot
 
 ## normalise\_text.py
 Normalises text, e.g. 
-Shakespeare-37 Two beers...  or not 2 beers? 
--> Shakespeare-37 two beers or not two beers
+    Shakespeare-37 Two beers...  or not 2 beers? 
+    -> Shakespeare-37 two beers or not two beers
 
 ## wer\_output\_filter\_finnish\_morf
 Finnish text concatenator and fixer for Morfessor based output with any glueing mechanism.
