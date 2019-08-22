@@ -17,3 +17,5 @@ module load Morfessor
 #Misc:
 export PYTHONIOENCODING='utf-8'
 module list
+
+[ -f ./local_path.sh ] && source local_path.sh

@@ -39,3 +39,5 @@ export mkgraph_cmd="slurm.pl"
 export cuda_cmd="slurm.pl --gpu 1"
 export par_cmd="slurm.pl"
 export emb_cmd="slurm.pl --gpu 1"
+
+[ -f ./local_cmd.sh ] && source local_cmd.sh
