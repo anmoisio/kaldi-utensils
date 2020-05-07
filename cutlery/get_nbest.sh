@@ -30,8 +30,9 @@ $cmd JOB=1:$nj "$outdir"/log/get_nbest.JOB.log \
   lattice-to-nbest --lm-scale="$LMWT" --n="$num_best" \
     "ark:gunzip -c $dir/lat.JOB.gz|" ark:- \| \
   nbest-to-linear ark:- ark:/dev/null \
-    "ark,t:|int2sym.pl -f 2- $symtab > $outdir/text.JOB" ark,t:"$outdir/ac_cost.JOB" || exit 1;
+    "ark,t:|int2sym.pl -f 2- $symtab > $outdir/text.JOB" ark,t:"$outdir/lm_cost.JOB" ark,t:"$outdir/ac_cost.JOB" || exit 1;
 
+cat "$outdir"/lm_cost.* >"$outdir"/lm_cost && rm "$outdir"/lm_cost.*
 cat "$outdir"/text.* > "$outdir"/text && rm "$outdir"/text.*
 cat "$outdir"/ac_cost.* > "$outdir"/ac_cost && rm "$outdir"/ac_cost.*
 echo "Done getting $num_best-best transcripts with acoustic costs, output in $outdir"
