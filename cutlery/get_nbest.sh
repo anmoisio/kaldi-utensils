@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu -o pipefail
 
-LMWT=13
+LMWT=10
 num_best=50
 cmd=run.pl
 
@@ -11,6 +11,7 @@ echo "$0 $@"  # Print the command line for logging
 
 if [ "$#" -ne 3 ]; then
   echo "Usage: $0 <graph|lang> <decode-dir> <out-dir>"
+  echo "  --cmd (utils/run.pl|utils/queue.pl <queue opts>) # how to run jobs."
   exit 1
 fi
 
