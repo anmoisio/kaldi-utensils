@@ -16,7 +16,7 @@ def read_cost_file(path):
 
 def read_nbest_text(path):
   hyps = {} #{<uttid>:{<n>:text}}
-  with open(path) as fi:
+  with open(path, encoding='utf-8') as fi:
     for line in fi:
       try:
         nbest_id, text = line.strip().split(maxsplit=1)
