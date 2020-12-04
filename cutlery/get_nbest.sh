@@ -12,6 +12,7 @@ echo "$0 $@"  # Print the command line for logging
 if [ "$#" -ne 3 ]; then
   echo "Usage: $0 <graph|lang> <decode-dir> <out-dir>"
   echo "  --cmd (utils/run.pl|utils/queue.pl <queue opts>) # how to run jobs."
+  echo "  --num_best <int> # number of top hypotheses"
   exit 1
 fi
 

@@ -37,14 +37,20 @@ def find_lowest_costs(costs_list, weights):
         if uttid not in lowest_costs or lowest_costs[uttid][1] > weighted_cost:
           lowest_costs[uttid] = (n, weighted_cost)
     except KeyError:
-      raise(KeyError("NBest-id "+uttid+"-"+n+" is not found in all cost lists!"))
+      # raise(KeyError("NBest-id "+uttid+"-"+n+" is not found in all cost lists!"))
+      print("NBest-id "+uttid+"-"+n+" is not found in all cost lists!")
+      break
   return lowest_costs
 
 def choose_hypotheses(hyps, lowest_costs):
   chosen = {}
   for uttid in hyps:
-    n, weighted_cost = lowest_costs[uttid]
-    chosen[uttid] = hyps[uttid][n]
+    try:
+      n, weighted_cost = lowest_costs[uttid]
+      chosen[uttid] = hyps[uttid][n]
+    except KeyError as err:
+      print(err)
+      break
   return chosen
 
 if __name__ == "__main__":
